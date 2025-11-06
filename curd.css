@@ -1,0 +1,161 @@
+:root {
+    --primary-color: #3498db;
+    --secondary-color: #2ecc71;
+    --danger-color: #e74c3c;
+    --dark-color: #2c3e50;
+}
+
+body {
+    background-color: #f8f9fa;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+h1.head {
+    text-align: center;
+    margin: 1rem 0;
+    color: var(--dark-color);
+}
+.container {
+    max-width: 900px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.1);
+}
+
+.form_container {
+    padding: 1.5rem;
+}
+
+input {
+    width: 100%;
+    padding: 12px 15px;
+    margin: 8px 0;
+    border: 2px solid #e9ecef;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+input:focus {
+    border-color: var(--primary-color);
+    outline: none;
+    box-shadow: 0 0 5px rgba(52, 152, 219, 0.3);
+}
+
+.create_form, .update_form {
+    display: none;
+    margin-bottom: 2rem;
+    background: #f8f9fa;
+    padding: 2rem;
+    border-radius: 10px;
+}
+
+button {
+    padding: 12px 25px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.add_btn {
+    background: var(--secondary-color);
+    color: white;
+    margin: 1rem 0;
+}
+
+.add_btn:hover {
+    background: #27ae60;
+    transform: translateY(-2px);
+}
+
+/* Table Styles */
+.table {
+    margin-top: 2rem;
+    border-collapse: separate;
+    border-spacing: 0;
+    width: 100%;
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(0,0,0,0.05);
+}
+
+.table thead th {
+    background: var(--dark-color);
+    color: white;
+    padding: 15px;
+    font-weight: 500;
+}
+
+.table tbody td {
+    padding: 15px;
+    border-bottom: 1px solid #eee;
+}
+
+.table tbody tr:hover {
+    background: #f8f9fa;
+}
+
+/* Action Buttons */
+.table button {
+    padding: 8px 15px;
+    margin: 0 5px;
+}
+
+button[onclick*="edit"] {
+    background: var(--primary-color);
+    color: white;
+}
+
+button[onclick*="edit"]:hover {
+    background: #2980b9;
+}
+
+button[onclick*="deleteData"] {
+    background: var(--danger-color);
+    color: white;
+}
+
+button[onclick*="deleteData"]:hover {
+    background: #c0392b;
+}
+
+/* Form Buttons */
+button[onclick*="add"], 
+button[onclick*="update"] {
+    background: var(--primary-color);
+    color: white;
+    width: 100%;
+    margin-top: 1rem;
+}
+
+button[onclick*="add"]:hover,
+button[onclick*="update"]:hover {
+    background: #2980b9;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        margin: 1rem;
+        padding: 1rem;
+    }
+    
+    .table thead {
+        display: none;
+    }
+    
+    .table tbody td {
+        display: block;
+        text-align: right;
+        padding: 10px;
+    }
+    
+    .table tbody td::before {
+        content: attr(data-label);
+        float: left;
+        font-weight: bold;
+    }
+}

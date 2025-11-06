@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="curd.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+    
+</head>
+
+<body onload = "readAll()">
+    <h1 class="head">Employee Management System</h1>
+    
+    <div class="container">
+        <div class="form_container">
+            <form class="create_form">
+                <input type="text" name="name" id="name" class="cname" placeholder="Enter your name">
+                <input type="email" name="email" id="email" class="cemail" placeholder="Enter your Email">
+                <input type="number" name="age" id="age" class="cage" placeholder="Enter your Age">
+                <input type="number" name="salary" id="salary" class="csalary" placeholder="Enter your Salary">
+                <input type="text" name="department" id="department" class="cdepartment" placeholder="Enter your Department">
+                <button type="button" onclick="add()">Create</button>
+            </form>
+            <form class="update_form">
+                <input type="text" hidden name="id" class="uid">
+                <input type="text" name="name" id="name" class="uname" placeholder="Enter your Name">
+                <input type="email" name="email" id="email" class="uemail" placeholder="Enter your email">
+                <input type="number" name="age" id="age" class="uage" placeholder="Enter your Age">
+                <input type="number" name="salary" id="salary" class="usalary" placeholder="Enter your Salary">
+                <input type="text" name="department" id="department" class="udepartment" placeholder="Enter your email">
+                <button type="button" onclick="update()">Update</button>
+            </form>
+            <button onclick="create()" class="add_btn">Add +</button>
+            <br>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Age</th>
+                        <th>Email</th>
+                        <th>Salary</th>
+                        <th>Department</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody class="table_body">
+
+                </tbody>
+            </table>
+        </div>
+        
+    </div>
+    <script src="curd1.js"></script>
+</body>
+
+</html>
